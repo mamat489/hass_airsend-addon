@@ -17,6 +17,8 @@ RUN chmod a+x /home/state_post.sh
 RUN chmod a+x /home/states_get.sh
 RUN chmod a+x /run.sh
 
+RUN echo "nameserver 1.1.1.1" > /etc/resolv.conf
+
 # Install AirSendWebService
 RUN mkdir -p /home && cd /home && wget https://devmel.com/dl/AirSendWebService.tgz && tar -zxvf AirSendWebService.tgz && chmod -R 777 bin
 
