@@ -11,16 +11,15 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY hassapi.class.php /home
 COPY hass_cb.php /home
 COPY state_post.sh /home
+COPY AirSendWebService.tgz /home
 COPY states_get.sh /home
 COPY run.sh /
 RUN chmod a+x /home/state_post.sh
 RUN chmod a+x /home/states_get.sh
 RUN chmod a+x /run.sh
 
-RUN echo "nameserver 1.1.1.1" > /etc/resolv.conf
-
 # Install AirSendWebService
-RUN mkdir -p /home && cd /home && wget https://devmel.com/dl/AirSendWebService.tgz && tar -zxvf AirSendWebService.tgz && chmod -R 777 bin
+RUN mkdir -p /home && cd /home && tar -zxvf AirSendWebService.tgz && chmod -R 777 bin
 
 # Install Services
 RUN apk add php php-curl nginx openssl
