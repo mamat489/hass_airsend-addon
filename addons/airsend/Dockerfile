@@ -22,7 +22,7 @@ RUN chmod a+x /run.sh
 RUN mkdir -p /home && cd /home && tar -zxvf AirSendWebService.tgz && chmod -R 777 bin
 
 # Install Services
-RUN apk add php php-curl nginx openssl
+RUN apk add --allow-untrusted php php-curl nginx openssl
 
 # Generate self-signed certificate
 RUN mkdir -p /etc/nginx/ssl
