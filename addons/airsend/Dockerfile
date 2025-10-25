@@ -18,7 +18,7 @@ RUN chmod a+x /home/states_get.sh
 RUN chmod a+x /run.sh
 
 # Install AirSendWebService
-RUN mkdir -p /home && cd /home && wget http://devmel.com/dl/AirSendWebService.tgz && tar -zxvf AirSendWebService.tgz && chmod -R 777 bin
+RUN mkdir -p /home && cd /home && wget https://devmel.com/dl/AirSendWebService.tgz && tar -zxvf AirSendWebService.tgz && chmod -R 777 bin
 
 # Install Services
 RUN apk add php php-curl nginx openssl
